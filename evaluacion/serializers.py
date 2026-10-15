@@ -4,14 +4,14 @@ from .models import Proyecto, Evaluador, Calificacion
 class ProyectoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proyecto
-        fields = '__all__' #Revisar qué hace?
+        fields = ["id", "titulo", "equipo", "categoria"]
 
 class EvaluadorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evaluador
-        fields = '__all__'
+        fields = ["id", "nombre", "email"]
 
 class CalificacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Calificacion
-        fields = '__all__'
+        fields = ["id", "proyecto", "evaluador", "puntaje", "comentario", "fecha"]
